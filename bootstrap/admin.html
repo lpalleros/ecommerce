@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Baggins Associates</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .carousel-indicators li {
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+        }
+    </style>
+    <style>
+        .carousel-item {
+    height: 400px;
+}
+
+.carousel-indicators li.active{
+    background-color: rgb(76, 187, 251)!important;
+    width: 11px;
+    height: 11px;
+}
+
+.carousel-indicators li{
+    background-color: rgb(215, 241, 255)!important;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.image-background-1 {
+    background: url('/img/hobbiton.jpg');
+    background-size: cover;
+}
+.image-background-2 {
+    background: url('/img/la\ comarca.jpg');
+    background-size: cover;
+}
+.image-background-3 {
+    background: url('/img/destacada1.jpg');
+    background-size: cover;
+}
+    </style>
+</head>
+<body >
+
+            <!--Navbar-->
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark  shadow sticky-top">
+                <div class="container">
+                    <a href="index.html" class="display-3 navbar-brand"><img src="/img/2425_the-hobbit-an-unexpected-journey-prev.png" width="90px" alt="">
+                    </a> 
+           
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                            <span class="navbar-toggler-icon"></span>
+                    </button>
+           
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                       <form class="d-flex  mx-3 my-auto flex-grow-1" action="list-products.html">
+                           <input class="form-control flex-grow-1  align-self-center" type="search" placeholder="Search" aria-label="Search">
+                          
+                           <button class="btn btn-outline-secondary " type="submit"><i class="fa fa-search"></i></button>
+                       </form>
+                       <ul class="navbar-nav ml-auto">
+                           <li class="nav-item">
+                               <a href="#admin" class="nav-link"><i class="fa fa-cogs mr-2"></i>Admin</a>
+                           </li>
+                           <li class="nav-item">
+                               <a href="register.html" class="nav-link"><i class="fa fa-user-plus mr-2"></i>Registrarse</a>
+                           </li>
+                           <li class="nav-item">
+                               <a href="login.html" class="nav-link"><i class="fa fa-user-circle mr-2"></i>Iniciar Sesión</a>
+                           </li>
+                           <li class="nav-item">
+                               <a href="#cart" class="nav-link"><i class="fa fa-shopping-cart mr-2"></i>Carrito</a>
+                           </li>
+                       </ul>
+           
+                    </div>
+                </div>
+                <!--End::Navbar-->
+               </nav>
+               <!--End::Navbar-->
+
+
+
+    <!--Start container-->        
+    <div class="container">
+        <section class="my-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <ul class="list-group hover">
+                            <li class="list-group-item list-group-item-action" > <a href="carga-articulo.html">Cargar Nuevo Producto</a> </li>
+                            <li class="list-group-item list-group-item-action">Editar Productos</li>
+                            <li class="list-group-item list-group-item-action">Ver Preguntas</li>
+                            <li class="list-group-item list-group-item-action">Ver Compras</li>
+                            <li class="list-group-item list-group-item-action">Ver Ventas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!--End container-->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>        
+    <script>
+        // $('.carousel').carousel({
+        //  interval: 5000
+        // });
+
+        $('.carousel').carousel('cycle');
+    </script>
+</body>
+</html>
