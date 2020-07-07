@@ -7,7 +7,7 @@ CREATE TABLE articulos (
     cod_univta CHAR(3),
     cod_categ CHAR(3), 
     porc_ivavta DECIMAL(6,3)
-)
+),
 
 CREATE TABLE clientes ( 
     clien_id SERIAL PRIMARY KEY,
@@ -18,7 +18,7 @@ CREATE TABLE clientes (
     cod_provin CHAR(3),
     cod_pais CHAR(2),
     email VARCHAR(100)
-)
+),
 
 CREATE TABLE usuarios ( 
     usr_id SERIAL PRIMARY KEY,
@@ -28,7 +28,7 @@ CREATE TABLE usuarios (
     habilitado BOOLEAN,
     tipo_usr CHAR(3),
     clien_id INTEGER
-)
+),
 
 
 CREATE TABLE medios_cobro ( 
@@ -36,7 +36,7 @@ CREATE TABLE medios_cobro (
     nombre VARCHAR(100),
     nro_comercio VARCHAR(20),
     habilitado BOOLEAN 
-)
+),
 
 CREATE TABLE documentos (
     doc_docum CHAR(8) NOT NULL PRIMARY KEY,
@@ -46,7 +46,7 @@ CREATE TABLE documentos (
     habilitado BOOLEAN,
     ult_nro INTEGER NOT NULL,
     signo INTEGER
-)
+),
 
 CREATE TABLE carrito_cab ( 
     cart_id SERIAL PRIMARY KEY,
@@ -54,30 +54,30 @@ CREATE TABLE carrito_cab (
     cart_start DATETIME,
     cart_session VARCHAR(50),
     cart_ip VARCHAR(15)
-)
+),
 
 CREATE TABLE carrito_det (
     art_id INTEGER NOT NULL PRIMARY KEY,
     cart_id INTEGER NOT NULL REFERENCES carrito_cab(cart_id),
     cantidad DECIMAL(8,3)
-)
+),
 
 CREATE TABLE movstk_cab (
-    movstk_id AUTO PRIMARY KEY,
+    movstk_id SERIAL PRIMARY KEY,
     cod_docum char(8) NOT NULL REFERENCES facturas_cab(cod_docum),
     pref_docum char(4),
     nro_docum INTEGER NOT NULL REFERENCES facturas_cab(nro_docum),
     signo INTEGER NOT NULL
-)
+),
 
 CREATE TABLE movstk_det (
     art_id INTEGER NOT NULL PRIMARY KEY,
     movstk_id INTEGER NOT NULL REFERENCES facturas_cab(cod_docum),
     cantidad DECIMAL(8,3)
-)
+),
 
 CREATE TABLE facturas_cab (
-    fact_id AUTO PRIMARY KEY,
+    fact_id SERIAL PRIMARY KEY,
     clien_id INTEGER NOT NULL,
     cart_id INTEGER,
     fecha DATE,
@@ -88,7 +88,7 @@ CREATE TABLE facturas_cab (
     nro_docum INTEGER NOT NULL,
     total_fact DECIMAL(14,2),
     cae VARCHAR(22)
-)
+),
 
 CREATE TABLE facturas_det (
     fact_id INTEGER REFERENCES facturas_cab(fact_id),
@@ -100,7 +100,7 @@ CREATE TABLE facturas_det (
     porc_iva DECIMAL(14,2),
     impor_iva DECIMAL(14,2),
     total_item DECIMAL(14,2)
-)
+),
 
 CREATE TABLE cobros_det (
     fact_id INTEGER NOT NULL REFERENCES facturas_cab(fact_id),
